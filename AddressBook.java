@@ -35,6 +35,20 @@ public class AddressBook {
                     person.setPhoneNo(scanner.next());
                     personList.add(person);
                     break;
+                case 2:
+                    System.out.println("Enter the first name with which you want to edit:");
+                    String previousFirstName = scanner.next();
+                    System.out.println("Enter the first name which you want to replace:");
+                    String replacedFirstName = scanner.next();
+                    System.out.println("Array list before modifying:"+personList);
+                    for( int i = 0;i<=personList.size()-1;i++)
+                    {
+                        Person fname = personList.get(i);
+                        if(fname.getFirstName().equals(previousFirstName))
+                            personList.get(i).setFirstName(replacedFirstName);
+                    }
+                    System.out.println("Array list after modifying:"+personList);
+                    break;
 
                 default:
                     System.out.println("Please enter valid input");
