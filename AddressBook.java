@@ -49,6 +49,17 @@ public class AddressBook {
                     }
                     System.out.println("Array list after modifying:"+personList);
                     break;
+                case 3:
+                    System.out.println("Enter firstName to delete a record.");
+                    String firsName = scanner.next();
+                    for (int i = 0; i <= personList.size()-1; i++) {
+                        Person fname= personList.get(i);
+                        if (fname.getFirstName().equals(firsName)) {
+                            personList.remove(i);
+                            System.out.println("Successfully deleted a record");
+                        }
+                    }
+                    break;
 
                 default:
                     System.out.println("Please enter valid input");
